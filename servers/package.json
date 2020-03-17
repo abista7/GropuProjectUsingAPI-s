@@ -4,8 +4,11 @@
   "description": "",
   "main": "api.js",
   "dependencies": {
+    "axios": "^0.19.2",
     "express": "^4.17.1",
-    "http-proxy": "^1.18.0"
+    "http-proxy": "^1.18.0",
+    "js-sha3": "^0.8.0",
+    "node-fetch": "^2.6.0"
   },
   "devDependencies": {},
   "scripts": {
