@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Switch, Route, Link } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import { Navbar, Nav } from 'react-bootstrap'
 import Skyscanner from './Skyscanner'
 import Alphavantage from './Alphavantage'
