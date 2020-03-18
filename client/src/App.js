@@ -6,6 +6,7 @@ import Skyscanner from './Skyscanner'
 import Alphavantage from './Alphavantage'
 import Darksky from './Darksky'
 import Xposed from './Xposed'
+import Home from './Home';
 
 const App = () => {
   // let isShown = false;
@@ -27,6 +28,7 @@ const App = () => {
         </Navbar.Collapse>
       </Navbar>
       <Switch>
+        <Route exact path='/' component={Home} />
         <Route path='/skyscanner' component={Skyscanner} />
         <Route path='/alphavantage' component={Alphavantage} />
         <Route path='/darksky' component={Darksky} />
