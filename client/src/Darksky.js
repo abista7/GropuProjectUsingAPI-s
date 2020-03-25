@@ -32,10 +32,9 @@ render() {
             <h2>Weather App</h2>
             <div>
                 <input type="text" placeholder="Enter city name" onChange={(e) => this.setState({ city: e.target.value })}></input>
-                  <Button onClick={this.check}>Get Data</Button>
-                   <Button onClick={this.check}>Go Back</Button>
-                  <button onClick={() => this.check(this.state.city)}>Get data</button> 
-                 <button onClick={() => this.props.changePage('Home')}>Go Back</button>
+                   
+                  <Button onClick={() => this.check(this.state.city)}>Get data</Button> 
+                 <Button onClick={() => this.props.changePage('Home')}>Go Back</Button>
 
             </div>
             { this.state.result ? 
