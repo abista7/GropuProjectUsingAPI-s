@@ -14,16 +14,12 @@ class Darksky extends React.Component {
     }
 
         check = e => {
-            const req = '/darksky?city=' + this.state.city
+            const req = '/abista7?city=' + this.state.city
             axios.get(req)
                 .then(response => {
                     alert(response.data.response);
                 })
         }
-
-    // componentDidMount() {
-
-    // }
 
   
 render() {
@@ -33,9 +29,9 @@ render() {
             <div>
                 <input type="text" placeholder="Enter city name" onChange={(e) => this.setState({ city: e.target.value })}></input>
                   <Button onClick={this.check}>Get Data</Button>
-                   <Button onClick={this.check}>Go Back</Button>
-                  <button onClick={() => this.check(this.state.city)}>Get data</button> 
-                 <button onClick={() => this.props.changePage('Home')}>Go Back</button>
+                
+                  {/* <button onClick={() => this.check(this.state.city)}>Get data</button> 
+                 <button onClick={() => this.props.changePage('Home')}>Go Back</button> */}
 
             </div>
             { this.state.result ? 
