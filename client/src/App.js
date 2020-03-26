@@ -14,7 +14,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <Navbar bg="dark" variant='dark'>
+      <Navbar bg="dark" variant='dark' expand='md'>
         <Navbar.Brand>Hugh-G-Rection</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

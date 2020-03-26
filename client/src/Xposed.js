@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button, Form, Container } from 'react-bootstrap'
+import { Button, Form, Container, Spinner } from 'react-bootstrap'
 import axios from 'axios'
 
 export class Xposed extends Component {
@@ -7,16 +7,9 @@ export class Xposed extends Component {
 		super(props)
 
 		this.state = {
-			password: '',
-			isEmpty: true
-		}
-	}
-
-	varifyInput = () => {
-		if (this.state.password === '') {
-			this.setState({ isEmpty: true })
-		} else {
-			this.setState({ isEmpty: false })
+			inputField: '',
+			outputField: '',
+			isLoading: false,
 		}
 	}
 
@@ -24,17 +17,19 @@ export class Xposed extends Component {
 		this.setState({
 			[event.target.id]: event.target.value
 		});
-		this.varifyInput()
 		console.log(this.state);
-
 	}
 
-	check = e => {
-		const req = '/xposed?password=' + this.state.password
-		axios.get(req)
-			.then(response => {
-				alert(response.data.response);
-			})
+	fetchData = e => {
+		this.setState({ isLoading: true })
+		setTimeout(() => {
+			axios.get('/xposed?password=' + this.state.inputField)
+				.then(res => {
+					this.setState({ isLoading: false })
+					console.log(res.data)
+					this.setState({ outputField: res.data.response })
+				}).catch(e => console.log(e))
+		}, 1000)
 	}
 
 	render() {
@@ -43,13 +38,22 @@ export class Xposed extends Component {
 				<Container>
 					<h2>Xposed</h2>
 					<Form style={{ textAlign: 'left' }}>
-						<Form.Group controlId="password" onInput={this.handleChange}>
+						<Form.Group controlId="inputField" onInput={this.handleChange}>
 							<Form.Label>Enter a password:</Form.Label>
-							<Form.Control type="password" />
+							<Form.Control type="text" placeholder='qwerty'/>
 						</Form.Group>
-						{this.state.isEmpty && (<Button variant="secondary" href='#' disabled>Check it</Button>)}
-						{!this.state.isEmpty && (<Button onClick={this.check}>Check it</Button>)}
+						<Button onClick={this.fetchData}>Check it</Button>{' '}
+						{this.state.isLoading && (<Button>
+							<Spinner
+								animation='border'
+								role='status'
+								size='sm'
+							/>
+							Loading...
+						</Button>
+						)}
 					</Form>
+						{this.state.outputField && (<h3 style={{color:'red'}}>{this.state.outputField}</h3>)}
 				</Container>
 			</div>
 		)
