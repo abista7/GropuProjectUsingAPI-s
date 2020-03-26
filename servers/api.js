@@ -8,8 +8,8 @@ const app = express();
 
 app.get('/skyscanner', ahmadsFunction)
 app.get('/xposed', lesliesFunction)
-app.get('/abista7', abista7Function)
-app.get('/sanjay417', sanjay417Function)
+app.get('/darksky', abista7Function)
+app.get('/alphavantage', sanjay417Function)
 app.get('*', (req, res) => {
     res.send(errorMessage(req))
 })

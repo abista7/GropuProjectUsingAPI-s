@@ -48,7 +48,7 @@ const main = (req, res) => {
                 status: "ERROR",
                 date: new Date().toLocaleString(),
                 params: req.query,
-                response: error
+                response: "PLEASE ENTER A VALID SYMBOL"
             }
             console.log(reobj);
             res.send(reobj);
