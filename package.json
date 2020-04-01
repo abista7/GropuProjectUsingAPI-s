@@ -1,0 +1,21 @@
+{
+  "name": "hw2-hugh-g-rection-on-hw2",
+  "version": "1.0.0",
+  "description": "- `npm start` from client directory \r - Create a form with a button\r - Add a button that toggles the visibility of another component\r - Use an effect to fetch counter from server when page loads\r - Reverse proxy to your backend server\r - Fetch and display the current page count\r - Add a visitor log, create a text input for name, and a button\r - When user clicks button, send the name to the back end\r - Display visitor log when page loads, or when new name is inserted",
+  "main": "index.js",
+  "scripts": {
+    "client": "npm start --prefix client",
+    "server": "node ./servers",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sfsu-667-spring-2020/hw2-hugh-g-rection-on-hw2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sfsu-667-spring-2020/hw2-hugh-g-rection-on-hw2/issues"
+  },
+  "homepage": "https://github.com/sfsu-667-spring-2020/hw2-hugh-g-rection-on-hw2#readme"
+}
