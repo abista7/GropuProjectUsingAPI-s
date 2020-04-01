@@ -14,7 +14,7 @@ class Darksky extends React.Component {
     }
 
         check = e => {
-            const req = '/abista7?city=' + this.state.city
+            const req = '/darksky?city=' + this.state.city
             axios.get(req)
                 .then(response => {
                     alert(response.data.response);
