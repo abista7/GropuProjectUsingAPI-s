@@ -6,6 +6,7 @@ import Skyscanner from './Skyscanner'
 import Alphavantage from './Alphavantage'
 import Darksky from './Darksky'
 import Xposed from './Xposed'
+import Home from './Home';
 
 const App = () => {
   // let isShown = false;
@@ -13,7 +14,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <Navbar bg="dark" variant='dark'>
+      <Navbar bg="dark" variant='dark' expand='md'>
         <Navbar.Brand>Hugh-G-Rection</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -27,6 +28,7 @@ const App = () => {
         </Navbar.Collapse>
       </Navbar>
       <Switch>
+        <Route exact path='/' component={Home} />
         <Route path='/skyscanner' component={Skyscanner} />
         <Route path='/alphavantage' component={Alphavantage} />
         <Route path='/darksky' component={Darksky} />
